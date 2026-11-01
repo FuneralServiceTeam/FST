@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#123c69"><meta name="description" content="Calvary Foursquare Church Funeral Service Team"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/fst-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"><title>FST | Calvary Foursquare Church</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="top"><div class="brand"><b>FST</b><span><strong>Funeral Service Team</strong><small>Calvary Foursquare Church</small></span></div><span id="connectionStatus" class="conn" role="status">…</span></header>
+<main class="wrap">
+<div id="loadBanner"></div>
+
+<section class="view" id="v-home">
+ <div id="nextService"></div>
+ <div id="fuHome"></div>
+ <article class="card verse hidden" id="verseCard"></article>
+ <article class="card hidden" id="devotionCard"></article>
+ <div class="heading"><h2>Latest Posters</h2><a class="btn alt sm" href="#posters">View All Posters</a></div>
+ <div id="latestPosters" class="poster-grid latest"></div>
+ <div class="heading"><h2>Announcements</h2><a class="btn alt sm" href="#more">See all</a></div>
+ <div id="homeAnnouncements"></div>
+</section>
+
+<section class="view" id="v-events">
+ <h2>Calendar</h2>
+ <div class="card"><div class="heading"><button id="prev" class="btn alt sm" aria-label="Previous month">←</button><strong id="monthLabel"></strong><button id="next" class="btn alt sm" aria-label="Next month">→</button></div><div id="calendarGrid" class="calendar"></div><p class="muted small">Events without dates appear in the list below only.</p></div>
+ <h2>Events</h2>
+ <input id="eventSearch" class="search" type="search" placeholder="Search events…" aria-label="Search events">
+ <div class="filters"><button data-filter="all" class="active">All</button><button data-filter="upcoming">Upcoming</button><button data-filter="completed">Completed</button></div>
+ <div id="eventList"></div>
+</section>
+
+<section class="view" id="v-finance">
+ <h2>Finance</h2>
+ <div id="financeHero"></div>
+ <div class="actions"><a class="btn" href="#summary">📄 Summary for Pastors</a><a class="btn alt" href="#expenses">🧾 Expense Report</a><a class="btn alt" href="#tithes">⛪ Tithes &amp; Offering Report</a></div>
+ <div class="seg" role="tablist"><button data-ftab="services" class="active">Services</button><button data-ftab="history">History</button><button data-ftab="donations">Donations</button><button data-ftab="funds">Funds</button></div>
+ <div id="ft-services" class="ftab"><div id="reportList"></div></div>
+ <div id="ft-history" class="ftab hidden"><div id="historyList"></div></div>
+ <div id="ft-donations" class="ftab hidden"><div id="donationList"></div></div>
+ <div id="ft-funds" class="ftab hidden"><div class="seg sm"><button data-fund="operating" class="active">Operating Fund</button><button data-fund="savings">Savings</button><button data-fund="offering">Offering</button></div><div id="ledgerList"></div></div>
+</section>
+
+<section class="view" id="v-expenses">
+ <div class="noprint actions"><a class="btn alt" href="#finance">← Back</a><button class="btn" data-print>Print / Save as PDF</button></div>
+ <div class="noprint grid2"><label>Year<select id="expYear"></select></label><label>Month<select id="expMonth"><option value="">All months</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></label></div>
+ <div id="expBody"></div>
+</section>
+
+<section class="view" id="v-tithes">
+ <div class="noprint actions"><a class="btn alt" href="#finance">← Back</a><button class="btn" data-print>Print / Save as PDF</button></div>
+ <div class="noprint grid2"><label>Year<select id="tyYear"></select></label><label>Month<select id="tyMonth"><option value="">All months</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></label></div>
+ <div id="tyBody"></div>
+</section>
+
+<section class="view" id="v-songs">
+ <h2>Songs &amp; Lyrics</h2>
+ <div class="poster-tools"><input id="songSearch" class="search" type="search" placeholder="Search title or lyrics…" aria-label="Search songs"><select id="songCat" aria-label="Filter by category"><option value="all">All categories</option></select></div>
+ <div id="songList"></div>
+</section>
+
+<section class="view" id="v-posters">
+ <h2>Poster Gallery</h2>
+ <p class="muted">Memorial service posters, team announcements, and church activities. Tap a poster to view it.</p>
+ <div class="poster-tools"><input id="posterSearch" class="search" type="search" placeholder="Search posters…" aria-label="Search posters"><select id="posterCategory" aria-label="Filter posters by category"><option value="all">All categories</option></select></div>
+ <div id="posterList" class="poster-grid"></div>
+</section>
+
+<section class="view" id="v-more">
+ <div class="actions"><a class="btn" href="#reach">🌱 New Believers</a><a class="btn alt" href="#attend">✅ Attendance</a><a class="btn alt" href="#impact">📊 Ministry Impact Report</a></div>
+ <h2>Assignments</h2><div id="assignmentList"></div>
+ <h2>Announcements</h2><div id="announcementList"></div>
+ <h2>About</h2>
+ <div class="card"><p>Funeral Service Team (FST) is a ministry under the Evangelism Team of Calvary Foursquare Church.</p><p class="muted small">Install this app: on Android, open the browser menu and choose “Install app”. On iPhone, tap Share → “Add to Home Screen”.</p><p><a href="admin.html">Secretary Workspace</a></p></div>
+</section>
+
+<section class="view" id="v-reach">
+ <div class="noprint actions"><a class="btn alt" href="#more">← Back</a></div>
+ <h2>New Believers &amp; Follow-ups</h2><p class="muted small">People who received the Lord Jesus Christ through FST services, and how they are being followed up. Please keep this list within the team.</p>
+ <div id="reachBody"></div>
+</section>
+<section class="view" id="v-attend">
+ <div class="noprint actions"><a class="btn alt" href="#more">← Back</a></div>
+ <h2>Attendance</h2><label class="noprint">Year<select id="atYear"><option value="all">All time</option></select></label><div id="attendBody"></div>
+</section>
+<section class="view" id="v-impact">
+ <div class="noprint actions"><a class="btn alt" href="#more">← Back</a><button class="btn" data-print>Print / Save as PDF</button></div>
+ <div class="noprint grid2"><label>Year<select id="imYear"></select></label><label>Month<select id="imMonth"><option value="">All months</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></label></div>
+ <div id="imBody"></div>
+</section>
+
+<section class="view" id="v-report"><div id="reportBody"></div></section>
+
+<section class="view" id="v-summary">
+ <div class="noprint actions"><a class="btn alt" href="#finance">← Back</a><button class="btn" data-print>Print / Save as PDF</button></div>
+ <div class="noprint grid2"><label>Year<select id="sumYear"></select></label><label>Month<select id="sumMonth"><option value="">All months</option><option value="01">January</option><option value="02">February</option><option value="03">March</option><option value="04">April</option><option value="05">May</option><option value="06">June</option><option value="07">July</option><option value="08">August</option><option value="09">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select></label></div>
+ <div id="summaryBody"></div>
+</section>
+<footer class="foot">FST · Calvary Foursquare Church</footer>
+</main>
+
+<nav class="tabbar" aria-label="Main"><a href="#home" data-tab="home"><span>🏠</span>Home</a><a href="#events" data-tab="events"><span>🗓️</span>Calendar</a><a href="#finance" data-tab="finance"><span>💰</span>Finance</a><a href="#posters" data-tab="posters"><span>🖼️</span>Posters</a><a href="#songs" data-tab="songs"><span>🎵</span>Songs</a><a href="#more" data-tab="more"><span>☰</span>More</a></nav>
+<dialog id="dlg"><button id="close" class="btn alt sm close">Close ✕</button><div id="dlgBody"></div></dialog>
+<script src="js/shared.js"></script><script src="js/outreach-app.js"></script><script src="js/app.js"></script><script src="js/pwa.js"></script>
+</body></html>

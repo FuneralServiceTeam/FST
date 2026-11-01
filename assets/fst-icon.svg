@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#176b50"/>
+  <circle cx="256" cy="230" r="150" fill="#ffffff" opacity=".10"/>
+  <path d="M256 100v250M165 225h182" fill="none" stroke="#fff" stroke-width="34" stroke-linecap="round"/>
+  <path d="M110 390c40-39 88-58 146-58s106 19 146 58" fill="none" stroke="#bce8ce" stroke-width="20" stroke-linecap="round"/>
+  <text x="256" y="455" font-family="Arial,sans-serif" font-size="50" font-weight="700" text-anchor="middle" fill="#fff">FST</text>
+</svg>

@@ -1,0 +1,16 @@
+{
+  "split": {
+    "tithes": 10,
+    "offering": 10,
+    "savings": 10,
+    "operating": 70
+  },
+  "presets": [
+    {
+      "name": "10/0/0/90",
+      "offering": 0,
+      "savings": 0,
+      "operating": 90
+    }
+  ]
+}

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete developer implementation brief for the Calvary Foursquare Church Funeral Service Team online system.">
+  <title>FST Online System — Developer Instructions</title>
+  <style>
+    :root {
+      --green: #176b45;
+      --green-dark: #104c32;
+      --green-soft: #eaf5ee;
+      --ink: #1c2923;
+      --muted: #596860;
+      --line: #dce6df;
+      --paper: #ffffff;
+      --page: #f3f7f4;
+      --warning: #fff6df;
+      --warning-line: #e4bd57;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    .topbar {
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: white;
+      padding: 34px 20px;
+    }
+    .topbar-inner, main, footer { width: min(100% - 32px, 980px); margin-inline: auto; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 800; opacity: .85; }
+    h1 { margin: 8px 0; font-size: clamp(1.8rem, 5vw, 2.7rem); line-height: 1.15; }
+    .subtitle { max-width: 760px; margin: 12px 0 0; color: #e4f4e9; }
+    main { padding: 24px 0 48px; }
+    .intro, section {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+      padding: clamp(18px, 4vw, 28px); margin: 0 0 18px;
+      box-shadow: 0 4px 16px rgba(22, 65, 43, .04);
+    }
+    .intro { border-left: 5px solid var(--green); }
+    h2 { font-size: 1.35rem; line-height: 1.3; margin: 0 0 14px; color: var(--green-dark); }
+    h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+    p { margin: 8px 0 12px; }
+    ul, ol { padding-left: 1.35rem; }
+    li { margin: 6px 0; }
+    .meta {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px; margin-top: 18px;
+    }
+    .meta div { background: var(--green-soft); padding: 12px 14px; border-radius: 10px; }
+    .meta strong { display: block; font-size: .8rem; color: var(--green-dark); text-transform: uppercase; letter-spacing: .04em; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    code { overflow-wrap: anywhere; background: #f0f4f1; padding: .1em .3em; border-radius: 4px; }
+    pre {
+      overflow-x: auto; background: #13231b; color: #edf8f0; padding: 16px;
+      border-radius: 10px; font-size: .88rem; line-height: 1.55;
+    }
+    .note {
+      background: var(--warning); border-left: 4px solid var(--warning-line);
+      border-radius: 8px; padding: 14px 16px; margin: 14px 0;
+    }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li { position: relative; padding-left: 1.9rem; }
+    .checklist li::before {
+      content: "□"; position: absolute; left: 0; top: 0; font-weight: 800; color: var(--green);
+    }
+    .pill {
+      display: inline-block; background: var(--green-soft); color: var(--green-dark);
+      border-radius: 999px; padding: 4px 10px; font-size: .82rem; font-weight: 700; margin: 3px 4px 3px 0;
+    }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    button {
+      appearance: none; border: 0; border-radius: 9px; padding: 11px 16px; cursor: pointer;
+      font: inherit; font-weight: 700; background: var(--green); color: white;
+    }
+    button.secondary { background: white; color: var(--green-dark); border: 1px solid var(--line); }
+    a { color: var(--green); }
+    footer { color: var(--muted); font-size: .9rem; padding: 0 0 30px; }
+    @media (max-width: 520px) {
+      body { font-size: 15px; }
+      .topbar { padding: 28px 0; }
+      .topbar-inner, main, footer { width: min(100% - 22px, 980px); }
+      pre { font-size: .8rem; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      .topbar { background: white; color: black; padding: 0 0 20px; }
+      .subtitle { color: #333; }
+      main { width: 100%; padding: 0; }
+      .topbar-inner, footer { width: 100%; }
+      section, .intro { box-shadow: none; break-inside: avoid; border-color: #bbb; }
+      .actions { display: none; }
+      pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #f5f5f5; color: #111; }
+      a { color: black; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="eyebrow">Developer Implementation Brief</div>
+      <h1>FST Online System</h1>
+      <p class="subtitle">Complete implementation instructions for the Poster Gallery, Secretary Workspace, mobile-first PWA, publishing workflow, privacy, and quality assurance.</p>
+      <div class="meta">
+        <div><strong>Organization</strong>Calvary Foursquare Church (CFC)</div>
+        <div><strong>Hosting</strong>GitHub Pages</div>
+        <div><strong>Platform</strong>Responsive website / PWA</div>
+        <div><strong>Publishing</strong>Authorized Secretary via GitHub workflow</div>
+      </div>
+      <div class="actions">
+        <button onclick="window.print()">Print / Save as PDF</button>
+        <button class="secondary" onclick="copyInstructions()">Copy instruction text</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="instructions">
+    <div class="intro">
+      <h2>Project objective</h2>
+      <p>Update the existing Funeral Service Team (FST) Online System into a professional, mobile-friendly application for viewing and managing approved funeral and memorial service information.</p>
+      <p>The Poster Gallery must be integrated into the existing app, not built as a separate website. Preserve existing working features and data. Inspect the current source code and create a backup or Git branch before changing files.</p>
+      <div>
+        <span class="pill">HTML / CSS / JavaScript</span>
+        <span class="pill">JSON files</span>
+        <span class="pill">GitHub Pages</span>
+        <span class="pill">PWA</span>
+        <span class="pill">No Firebase</span>
+        <span class="pill">No Google Sheets</span>
+      </div>
+    </div>
+
+    <section>
+      <h2>1. Existing features to preserve</h2>
+      <ul>
+        <li>Dashboard</li>
+        <li>Upcoming and completed memorial services</li>
+        <li>Calendar and event details</li>
+        <li>Team assignments</li>
+        <li>Published financial summaries</li>
+        <li>Announcements</li>
+        <li>Secretary Workspace and JSON export workflow</li>
+        <li>Installable PWA behavior and best-effort offline viewing</li>
+      </ul>
+      <p>Do not remove or redesign existing functionality in a way that breaks current workflows. Reuse existing scripts and styles where possible.</p>
+    </section>
+
+    <section>
+      <h2>2. Technical requirements and target structure</h2>
+      <p>Retain the existing stack unless a change is necessary: HTML5, CSS3, vanilla JavaScript, JSON, Web App Manifest, Service Worker, and GitHub Pages. Do not require a server or paid hosting for normal public viewing.</p>
+      <pre>FST-Online-System/
+├── index.html
+├── admin.html
+├── manifest.webmanifest
+├── service-worker.js
+├── README.md
+├── css/
+│   └── style.css
+├── js/
+│   ├── app.js
+│   ├── admin.js
+│   └── pwa.js
+├── assets/
+│   ├── fst-icon.svg
+│   ├── cfc-logo.png
+│   └── posters/
+│       ├── memorial-example.jpg
+│       └── announcement-example.png
+└── data/
+    ├── events.json
+    ├── assignments.json
+    ├── finances.json
+    ├── announcements.json
+    └── posters.json</pre>
+      <p>This is a target structure, not a requirement to duplicate files that already exist. Keep paths consistent and avoid duplicate stylesheets or script logic.</p>
+    </section>
+
+    <section>
+      <h2>3. Poster Gallery — public interface</h2>
+      <p>Add a visible <strong>Poster Gallery</strong> or <strong>Posters</strong> section to the main navigation and dashboard.</p>
+      <h3>Poster cards</h3>
+      <ul>
+        <li>Show a thumbnail, title, category, optional event date, and optional short description.</li>
+        <li>Use a responsive grid: one or two columns on phones depending on screen width, more columns on larger screens.</li>
+        <li>Preserve the original poster aspect ratio. Never crop important text or faces.</li>
+        <li>Make the whole card easy to tap, with readable captions and sufficient spacing.</li>
+        <li>Show only records marked as published.</li>
+        <li>Provide a clear empty state when there are no published posters.</li>
+      </ul>
+      <h3>Suggested categories</h3>
+      <ul>
+        <li>Memorial Service</li>
+        <li>Funeral Service</li>
+        <li>Church Announcement</li>
+        <li>Team Meeting</li>
+        <li>Training and Workshop</li>
+        <li>Other</li>
+      </ul>
+      <p>Add category filtering and text search if practical, without making the mobile interface crowded.</p>
+      <h3>Poster detail viewer</h3>
+      <p>When a poster is tapped, open an accessible modal or detail page that shows the full image, title, category, description, event date, venue, and related event link when those values exist.</p>
+      <ul>
+        <li>Provide a visible close button and Escape-key support where available.</li>
+        <li>Keep the image within the viewport; allow scrolling or zooming on small screens.</li>
+        <li>Use meaningful alt text.</li>
+        <li>Show a fallback if the image fails to load.</li>
+        <li>Do not invent missing dates, times, venues, names, or other event facts.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Poster data file and schema</h2>
+      <p>Create <code>data/posters.json</code>. Use the following schema consistently in all JavaScript and admin forms:</p>
+      <pre>[
+  {
+    "id": "poster-example-001",
+    "title": "Memorial Service Announcement",
+    "category": "Memorial Service",
+    "image": "assets/posters/memorial-example.jpg",
+    "description": "",
+    "date": "",
+    "venue": "",
+    "eventId": "",
+    "status": "published",
+    "publishedAt": "",
+    "alt": "Memorial service announcement poster"
+  }
+]</pre>
+      <div class="note"><strong>Important:</strong> This is an example record only. Do not publish fictional event information as an actual CFC announcement. Use real, approved data.</div>
+      <p>Implementation rules:</p>
+      <ol>
+        <li>Every poster must have a unique, stable ID.</li>
+        <li>The image path must reference a real image file in the repository.</li>
+        <li>Optional fields may be empty or null; the app must not crash.</li>
+        <li>Only <code>status: "published"</code> records appear in the public gallery. Draft records remain hidden.</li>
+        <li>Validate JSON and show a readable error if it is malformed.</li>
+        <li>Handle missing files and image-load failures gracefully.</li>
+        <li>Sort records predictably, preferably by publication date, with upcoming events optionally prioritized.</li>
+        <li>Use relative asset paths that work under GitHub Pages project-site URLs. Do not assume the site is hosted at the domain root.</li>
+        <li>Safely render user-provided text. Do not insert untrusted values using unsafe HTML injection.</li>
+        <li>Use the exact property names above consistently. The top-level JSON value must be an array, matching the existing app and Secretary JSON Editor. For compatibility, records without a status field are treated as published; new records should explicitly use "draft" or "published".</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>5. Secretary Workspace — poster management</h2>
+      <p>Extend the existing <code>admin.html</code> and <code>js/admin.js</code>. Do not replace the administration interface unnecessarily.</p>
+      <h3>Form fields</h3>
+      <ul>
+        <li>Poster title (required)</li>
+        <li>Category (required)</li>
+        <li>Image path (required)</li>
+        <li>Description (optional)</li>
+        <li>Event date (optional)</li>
+        <li>Venue (optional)</li>
+        <li>Related event ID (optional)</li>
+        <li>Alternative text (recommended)</li>
+        <li>Publication status: draft or published</li>
+      </ul>
+      <h3>Required actions</h3>
+      <ul>
+        <li>Add a poster record.</li>
+        <li>Edit an existing record.</li>
+        <li>Remove a record from the prepared dataset.</li>
+        <li>Preview the selected poster.</li>
+        <li>Mark a poster as draft or published.</li>
+        <li>Export the complete, valid <code>posters.json</code> file.</li>
+      </ul>
+      <p>Validate required fields, duplicate IDs, and image paths before export. Show clear success or error messages. Preserve all other records when one poster is added or edited. The preview should show the image before export.</p>
+    </section>
+
+    <section>
+      <h2>6. Publishing workflow and GitHub limitation</h2>
+      <div class="note"><strong>Critical:</strong> GitHub Pages is static hosting. A normal browser form cannot directly write new files into the GitHub repository. Do not claim that a Publish button automatically updates the live website unless a secure, real publishing mechanism has been implemented and tested.</div>
+      <p>The initial implementation must use this workflow:</p>
+      <ol>
+        <li>The Secretary prepares or edits poster records in the browser.</li>
+        <li>The Secretary downloads the generated <code>posters.json</code>.</li>
+        <li>The Secretary uploads the actual image files to <code>assets/posters/</code> in the GitHub repository.</li>
+        <li>The Secretary replaces or updates <code>data/posters.json</code>.</li>
+        <li>The Secretary commits the changes to GitHub.</li>
+        <li>GitHub Pages deploys the update.</li>
+        <li>Team members see the new posters after deployment and any necessary cache refresh.</li>
+      </ol>
+      <p>The existing client-side demo PIN is not secure authentication. A PIN embedded in JavaScript can be discovered. Repository permissions determine who can directly modify and publish the GitHub repository.</p>
+      <p>Never embed a GitHub personal access token or other secret in client-side JavaScript. If direct publishing from the phone is required in a future phase, implement a secure authenticated backend or GitHub integration with proper permission controls.</p>
+    </section>
+
+    <section>
+      <h2>7. Dashboard integration</h2>
+      <ul>
+        <li>Add a “Latest Posters” preview to the dashboard.</li>
+        <li>Display a few recent published posters.</li>
+        <li>Provide a “View All Posters” link to the gallery.</li>
+        <li>Make thumbnails readable and responsive on phones.</li>
+        <li>Show a friendly empty state when no posters are published.</li>
+        <li>If a poster links to an existing event, allow navigation to that event's details.</li>
+        <li>Avoid showing the same poster more than once in the dashboard preview.</li>
+      </ul>
+      <p>The gallery must not replace or break the existing dashboard, calendar, assignments, announcements, or finance-summary sections.</p>
+    </section>
+
+    <section>
+      <h2>8. Image asset requirements</h2>
+      <p>Support JPEG/JPG, PNG, and WebP. SVG may be used for trusted vector artwork such as logos and icons.</p>
+      <ul>
+        <li>Use lowercase filenames and hyphens instead of spaces.</li>
+        <li>Compress large images before uploading.</li>
+        <li>Keep the poster's original proportions.</li>
+        <li>Use <code>object-fit: contain</code> where needed so poster text is not cropped.</li>
+        <li>Use descriptive filenames, for example:</li>
+      </ul>
+      <pre>assets/posters/memorial-service-october.jpg
+assets/posters/team-meeting.png
+assets/posters/evangelism-training.webp</pre>
+      <p>Placing an image in the folder does not automatically add it to the gallery. It must also have a valid record in <code>data/posters.json</code>.</p>
+    </section>
+
+    <section>
+      <h2>9. Mobile-first PWA and offline behavior</h2>
+      <p>Preserve <code>manifest.webmanifest</code>, <code>service-worker.js</code>, and <code>js/pwa.js</code>. Update their references only as needed.</p>
+      <ul>
+        <li>Responsive layout, touch-friendly controls, readable typography, and navigation for narrow screens.</li>
+        <li>Accessible color contrast and spacing around device edges.</li>
+        <li>Fast loading on mobile connections.</li>
+        <li>Clear loading, empty, and error states.</li>
+        <li>Cache the app shell and public JSON, including <code>data/posters.json</code>.</li>
+        <li>Cache only a reasonable subset of poster images; do not cache every large image indiscriminately.</li>
+        <li>Provide a graceful fallback when an image is unavailable offline.</li>
+        <li>Implement cache versioning and remove obsolete caches when appropriate.</li>
+        <li>Test that new poster data and images can be retrieved after deployment without asking users to clear all browser data.</li>
+      </ul>
+      <p>Offline viewing is best-effort. A device must visit the site online at least once, and new posters require an internet connection before they can be downloaded to that device.</p>
+    </section>
+
+    <section>
+      <h2>10. Privacy and security</h2>
+      <ul>
+        <li>Publish only information approved for public viewing.</li>
+        <li>Obtain permission before publishing family photographs or personal details when appropriate.</li>
+        <li>Never store private identity documents or confidential family records in public asset folders.</li>
+        <li>Do not publish detailed financial information unless specifically approved for public access.</li>
+        <li>Keep internal-only records out of public JSON files.</li>
+        <li>Do not treat hidden interface elements or a client-side PIN as access control.</li>
+        <li>Never embed credentials, private tokens, or secrets in browser JavaScript.</li>
+        <li>Do not add an unauthenticated endpoint that can modify repository content.</li>
+      </ul>
+      <p>Files hosted publicly by GitHub Pages may be accessible to anyone who has the relevant URL. Design all published data with that limitation in mind.</p>
+    </section>
+
+    <section>
+      <h2>11. Performance and accessibility</h2>
+      <ul>
+        <li>Lazy-load poster thumbnails where appropriate.</li>
+        <li>Set image dimensions or aspect ratios to reduce layout shifts.</li>
+        <li>Use meaningful alternative text.</li>
+        <li>Give buttons accessible names and ensure keyboard usability where applicable.</li>
+        <li>Keep modal controls accessible and visible.</li>
+        <li>Avoid unnecessary external dependencies.</li>
+        <li>Prefer repository-hosted images when practical.</li>
+        <li>Show a friendly message if poster data cannot load.</li>
+        <li>Ensure all gallery controls work on small screens.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>12. Acceptance test checklist</h2>
+      <h3>Poster Gallery</h3>
+      <ul class="checklist">
+        <li>Gallery loads from <code>data/posters.json</code>.</li>
+        <li>A published poster appears.</li>
+        <li>A draft poster is hidden from public view.</li>
+        <li>Tapping a poster opens the full-size view.</li>
+        <li>Closing the viewer returns to the gallery.</li>
+        <li>Search and category filters work, if implemented.</li>
+        <li>Missing images display a fallback instead of breaking the page.</li>
+        <li>Optional dates, venues, and descriptions can be empty.</li>
+        <li>Invalid JSON displays a readable error rather than a blank application.</li>
+      </ul>
+      <h3>Secretary Workspace</h3>
+      <ul class="checklist">
+        <li>A new poster record can be prepared.</li>
+        <li>An existing record can be edited.</li>
+        <li>A record can be saved as draft or marked published.</li>
+        <li>Export produces valid JSON.</li>
+        <li>Export does not unintentionally delete other records.</li>
+        <li>Duplicate IDs are detected.</li>
+        <li>Preview shows the intended image.</li>
+        <li>Manual GitHub publishing instructions are clear.</li>
+      </ul>
+      <h3>Existing app and deployment</h3>
+      <ul class="checklist">
+        <li>Dashboard, calendar, event details, assignments, announcements, and financial summaries still work.</li>
+        <li>PWA installation still works.</li>
+        <li>No JavaScript errors occur during normal navigation.</li>
+        <li>GitHub Pages project URLs and repository-relative asset paths work.</li>
+        <li>Offline mode works within the tested cache limits after an initial online visit.</li>
+        <li>New poster data is retrieved after deployment and cache refresh.</li>
+        <li>No false claim of automatic publishing or real-time synchronization is made.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>13. Delivery requirements</h2>
+      <p>Deliver all of the following:</p>
+      <ol>
+        <li>Complete updated source code.</li>
+        <li>Updated <code>data/posters.json</code>.</li>
+        <li>Any new or updated CSS and JavaScript files.</li>
+        <li>Updated service-worker cache rules.</li>
+        <li>Updated <code>README.md</code> with installation, poster upload, and publishing instructions.</li>
+        <li>A list of files created or modified.</li>
+        <li>Screenshots of the actual running application at a mobile viewport.</li>
+        <li>A test report showing passed and failed acceptance tests.</li>
+        <li>A clear explanation of known limitations.</li>
+      </ol>
+      <p>Do not deliver only a visual mockup. The Poster Gallery must function in the actual application.</p>
+    </section>
+
+    <section>
+      <h2>14. Definition of done</h2>
+      <p>The project is complete when the Secretary can prepare a poster record, place the actual poster image in the correct assets folder, export valid JSON, publish both files through GitHub, and see the poster appear in the public FST app after deployment.</p>
+      <p>Team members must be able to open the poster on their phones, view its details, and navigate to the related event when applicable. All existing application features must remain functional.</p>
+    </section>
+
+    <section>
+      <h2>Final instruction to the developer</h2>
+      <p><strong>Do not rewrite the entire app before inspecting the existing code.</strong> Preserve working features, integrate the Poster Gallery cleanly, test the actual GitHub Pages deployment, and report honestly what has and has not been implemented.</p>
+    </section>
+  </main>
+  <footer>
+    FST Online System · Developer brief · Calvary Foursquare Church
+  </footer>
+  <script>
+    function copyInstructions() {
+      const root = document.getElementById("instructions");
+      const text = root.innerText;
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => alert("Instructions copied.")).catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+    function fallbackCopy(text) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      try {
+        document.execCommand("copy");
+        alert("Instructions copied.");
+      } catch (e) {
+        alert("Copy failed. Please select and copy the instructions manually.");
+      }
+      area.remove();
+    }
+  </script>
+</body>
+</html>

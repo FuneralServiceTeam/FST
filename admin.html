@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#123c69"><link rel="icon" href="assets/fst-icon.svg" type="image/svg+xml"><title>FST Secretary Workspace</title><link rel="stylesheet" href="css/style.css"></head>
+<body style="padding-bottom:24px">
+<header class="top"><a class="brand" href="index.html"><b>FST</b><span><strong>Secretary Workspace</strong><small>Calvary Foursquare Church</small></span></a><a class="conn" href="index.html" style="color:#fff;text-decoration:none">← App</a></header>
+<main class="wrap">
+<p class="notice"><strong>Security note:</strong> the PIN is only a convenience lock and can be seen in the page code. It is not real security. GitHub permissions decide who can publish. Do not put private information in these files.</p>
+<section class="card" id="pinPanel"><h2>Admin PIN</h2><label for="pin">PIN<input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="Enter PIN"></label><div class="actions"><button id="unlock" class="btn">Unlock</button></div><p id="pinMsg" class="muted"></p></section>
+<section class="hidden" id="workspace">
+ <div class="heading"><h2>Secretary Workspace</h2><button id="lock" class="btn alt sm">Lock</button></div>
+ <div id="warnBar"></div>
+ <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+ <div id="tabBody"></div>
+ <section class="card" id="publish"></section>
+</section>
+</main>
+<script src="js/shared.js"></script><script src="js/admin.js"></script><script src="js/outreach-admin.js"></script><script src="js/publish.js"></script>
+</body></html>
