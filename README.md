@@ -11,7 +11,7 @@ Phone-first website/app for the Funeral Service Team (under the Evangelism Team)
 - **More:** assignments (program assignments appear automatically), announcements
 - Installable as an app (PWA). Pages are marked "noindex" so search engines are asked not to list them. This is not security: anyone with the link can open it.
 
-## Secretary Workspace (`admin.html`, PIN `2468`)
+## Secretary Workspace
 Tabs: **Announcement / Event** (also makes the PNG announcement picture), **Finance report**, **Funds & Donations**, **Songs**, **Verse & Devotion**, **Posters**, **Notices & Tasks**, **Percentages**, **Raw JSON**.
 Your work is saved in your browser until you click "Done publishing", so you will not lose it if the page closes.
 
