@@ -1,17 +1,3 @@
 {
-  "posters": [
-    {
-      "title": "Funeral Service sa Bacood",
-      "category": "Funeral Service",
-      "image": "assets/posters/poster-01.png",
-      "eventDate": null,
-      "venue": "",
-      "eventId": "funeral-sa-bacood-2026-11-04",
-      "alt": "",
-      "status": "published",
-      "description": "",
-      "id": "poster-funeral-service-sa-bacood",
-      "publishedAt": "2026-11-04"
-    }
-  ]
+  "posters": []
 }
