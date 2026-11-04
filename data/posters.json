@@ -1,17 +1,3 @@
 {
-  "posters": [
-    {
-      "title": "FST sa Bacood",
-      "category": "Funeral Service",
-      "image": "assets/posters/poster-01.png",
-      "eventDate": "2026-11-04",
-      "venue": "Holy Family Chapel - Ricass Court",
-      "eventId": "funeral-sa-bacood-2026-11-04",
-      "alt": "",
-      "status": "published",
-      "description": "",
-      "id": "poster-fst-sa-bacood",
-      "publishedAt": "2026-11-04"
-    }
-  ]
+  "posters": []
 }
