@@ -1,0 +1,42 @@
+{
+  "id": "./",
+  "name": "Funeral Service Team | Calvary Foursquare Church",
+  "short_name": "CFC FST",
+  "description": "Funeral Service Team of Calvary Foursquare Church: announcements, calendar, programs, assignments, cashflow and daily devotion.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef4fb",
+  "theme_color": "#123c69",
+  "icons": [
+    {
+      "src": "assets/fst-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "lifestyle"
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "type": "donation",
+    "date": "2026-10-25",
+    "amount": 1000,
+    "details": "",
+    "source": "Senior Pastor",
+    "donor": "Rev. Darell Maghirang",
+    "designation": "custom",
+    "split": {
+      "tithes": 10,
+      "offering": 0,
+      "savings": 0,
+      "operating": 90
+    },
+    "parts": {
+      "tithes": 100,
+      "offering": 0,
+      "savings": 0,
+      "operating": 900
+    },
+    "id": "donation-2026-10-25-rev-darell-maghirang"
+  },
+  {
+    "type": "expense",
+    "date": "2026-10-25",
+    "amount": 1731.01,
+    "details": "McDonalds Meals and Drinks",
+    "category": "Food",
+    "fund": "operating",
+    "eventId": "funeral-service--2026-10-25",
+    "id": "expense-2026-10-25-food"
+  },
+  {
+    "type": "transfer",
+    "date": "2026-10-25",
+    "amount": 68.99,
+    "details": "",
+    "from": "operating",
+    "to": "offering",
+    "id": "transfer-2026-10-25-entry"
+  },
+  {
+    "type": "expense",
+    "date": "2026-10-30",
+    "amount": 300,
+    "details": "Pang-gasolina sa tricycle ni Bro. Joseph Dela Cruz",
+    "category": "Transportation",
+    "fund": "operating",
+    "eventId": "monthly-devotion-fst-core-2026-10-30",
+    "id": "expense-2026-10-30-transportation"
+  }
+]

@@ -1,0 +1,76 @@
+[
+  {
+    "eventId": "funeral-service--2026-10-25",
+    "serviceType": "Funeral Service",
+    "eventName": "Funeral Service • Lolita Borja",
+    "date": "2026-10-25",
+    "received": [
+      {
+        "source": "Family of Lolita Borja",
+        "donor": "",
+        "details": "",
+        "amount": 1000
+      }
+    ],
+    "expenses": [],
+    "allocations": [
+      {
+        "category": "tithes",
+        "details": "",
+        "amount": 100
+      }
+    ],
+    "notes": "",
+    "preparedBy": "Bro. JC Legaspi",
+    "approvedBy": "Bro. Joseph Dela Cruz",
+    "split": {
+      "tithes": 10,
+      "offering": 0,
+      "savings": 0,
+      "operating": 90
+    },
+    "id": "finance-funeral-service-lolita-borja-2026-10-25"
+  },
+  {
+    "eventId": "funeral-service-2026-10-29",
+    "serviceType": "Funeral Service",
+    "eventName": "Funeral Service • Carmen A. Celis",
+    "date": "2026-10-29",
+    "received": [
+      {
+        "source": "Family of Carmen A. Celis",
+        "donor": "",
+        "details": "",
+        "amount": 2500
+      }
+    ],
+    "expenses": [],
+    "allocations": [
+      {
+        "category": "Tithes",
+        "details": "10% of the ₱2,500.00 received",
+        "amount": 250
+      },
+      {
+        "category": "Offering",
+        "details": "10% of the ₱2,500.00 received",
+        "amount": 250
+      },
+      {
+        "category": "Savings",
+        "details": "10% of the ₱2,500.00 received",
+        "amount": 250
+      }
+    ],
+    "notes": "",
+    "preparedBy": "JC Legaspi",
+    "approvedBy": "Bro. Joseph Dela Cruz",
+    "split": {
+      "tithes": 10,
+      "offering": 10,
+      "savings": 10,
+      "operating": 70
+    },
+    "id": "finance-funeral-service-carmen-a-celis-2026-10-29"
+  }
+]

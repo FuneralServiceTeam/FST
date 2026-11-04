@@ -1,0 +1,17 @@
+name = "fst-publish"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+GITHUB_OWNER   = "YOUR-GITHUB-USERNAME"
+GITHUB_REPO    = "YOUR-REPO-NAME"
+GITHUB_BRANCH  = "main"
+# Your GitHub Pages origin(s), comma-separated, no trailing slash:
+ALLOWED_ORIGIN = "https://YOUR-GITHUB-USERNAME.github.io"
+# Change this number to log out every device at once (revoke all sessions):
+SESSION_EPOCH  = "1"
+
+# Secrets (never put these in this file). Set with:
+#   npx wrangler secret put GITHUB_TOKEN
+#   npx wrangler secret put ADMIN_PASSCODE
+#   npx wrangler secret put SESSION_SECRET

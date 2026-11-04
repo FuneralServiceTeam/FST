@@ -1,0 +1,144 @@
+[
+  {
+    "name": "Funeral Service • Lolita Borja",
+    "date": "2026-10-25",
+    "meetupTime": "",
+    "meetupPlace": "",
+    "departureTime": "",
+    "time": "",
+    "preacher": "Pastor Jhonnel Chavez",
+    "venue": "St. Peter's Chapel - Sampaloc",
+    "venueArea": "1428 Gerardo Tuazon St, Sampaloc, Manila, 1008 Metro Manila",
+    "soundPlace": "",
+    "soundBy": "",
+    "dressCode": "",
+    "status": "completed",
+    "type": "Funeral Service",
+    "announcement": "",
+    "notes": "",
+    "program": [],
+    "songs": [],
+    "id": "funeral-service--2026-10-25"
+  },
+  {
+    "name": "Funeral Service • Carmen A. Celis",
+    "date": "2026-10-29",
+    "meetupTime": "",
+    "meetupPlace": "",
+    "departureTime": "",
+    "time": "",
+    "preacher": "Pastor Jules Atienza",
+    "venue": "St. Peter's Chapel - Quezon Ave.",
+    "venueArea": "296 Quezon Ave 1103 Quezon City Metro Manila",
+    "soundPlace": "",
+    "soundBy": "",
+    "dressCode": "",
+    "status": "completed",
+    "type": "Funeral Service",
+    "announcement": "",
+    "notes": "",
+    "program": [],
+    "songs": [],
+    "id": "funeral-service-2026-10-29"
+  },
+  {
+    "name": "Committal Service - Carmen A. Celis",
+    "date": "2026-10-30",
+    "meetupTime": "",
+    "meetupPlace": "",
+    "departureTime": "",
+    "time": "",
+    "preacher": "Rev. Darell Maghirang",
+    "venue": "Arlington Memorial Chapels - Araneta",
+    "venueArea": "12 Gregorio Araneta Ave 1113 Quezon City Metro Manila",
+    "soundPlace": "",
+    "soundBy": "",
+    "dressCode": "",
+    "status": "completed",
+    "type": "Committal Service",
+    "announcement": "",
+    "notes": "",
+    "program": [],
+    "songs": [],
+    "id": "committal-service-2026-10-30"
+  },
+  {
+    "name": "Monthly Devotion • FST Core",
+    "date": "2026-10-30",
+    "meetupTime": "",
+    "meetupPlace": "",
+    "departureTime": "",
+    "time": "",
+    "preacher": "Bro. Marvin Anojan",
+    "venue": "CFC Training Center",
+    "venueArea": "CFC Sta. Mesa, Manila",
+    "soundPlace": "",
+    "soundBy": "",
+    "dressCode": "",
+    "status": "completed",
+    "type": "FST Core Devotion",
+    "announcement": "",
+    "notes": "",
+    "program": [],
+    "songs": [],
+    "id": "monthly-devotion-fst-core-2026-10-30"
+  },
+  {
+    "name": "FST sa Bacood",
+    "date": "2026-11-04",
+    "meetupTime": "19:00",
+    "meetupPlace": "CFC Compound",
+    "departureTime": "19:30",
+    "time": "20:00",
+    "preacher": "Sis. Crisanta Estacio",
+    "venue": "Holy Family Chapel - Ricass Court",
+    "venueArea": "Magtanggol St., Brgy. 617, Zone 61, Manila",
+    "soundPlace": "",
+    "soundBy": "",
+    "dressCode": "",
+    "status": "",
+    "type": "Funeral Service",
+    "announcement": "",
+    "notes": "",
+    "program": [
+      {
+        "item": "Opening Remarks & Opening Prayer",
+        "assignedTo": "Sis. Elvie Rosales"
+      },
+      {
+        "item": "Praise & Worship",
+        "assignedTo": "Sis. Jovelyn Quejano"
+      },
+      {
+        "item": "Guest Speaker",
+        "assignedTo": "Sis. Crisanta Estacio"
+      },
+      {
+        "item": "Prayer for the Family",
+        "assignedTo": "Sis. Crisanta Estacio"
+      },
+      {
+        "item": "Tribute from Family and Friends",
+        "assignedTo": ""
+      },
+      {
+        "item": "Closing Remarks & Closing Prayer",
+        "assignedTo": "Bro. Erick De Guzman"
+      }
+    ],
+    "songs": [],
+    "id": "funeral-sa-bacood-2026-11-04",
+    "tasks": [
+      {
+        "role": "Driver – FST Service Vehicle",
+        "name": "Bro. Jessie Atibagos",
+        "note": ""
+      },
+      {
+        "role": "Sound System Technician",
+        "name": "Bro. Ian Servanez",
+        "note": "CFC Sound System"
+      }
+    ]
+  }
+]
