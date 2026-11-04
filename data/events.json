@@ -130,14 +130,14 @@
     "id": "funeral-sa-bacood-2026-11-04",
     "tasks": [
       {
-        "role": "Driver – FST Service Vehicle",
+        "role": "CFC FST Driver",
         "name": "Bro. Jessie Atibagos",
-        "note": ""
+        "note": "Drive L300 - hatid-sundo ang FST"
       },
       {
-        "role": "Sound System Technician",
+        "role": "CFC FST SoundTech",
         "name": "Bro. Ian Servanez",
-        "note": "CFC Sound System"
+        "note": "Preparation ng Sound System"
       }
     ]
   }
