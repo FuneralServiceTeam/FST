@@ -49,5 +49,21 @@
     "fund": "operating",
     "eventId": "monthly-devotion-fst-core-2026-10-30",
     "id": "expense-2026-10-30-transportation"
+  },
+  {
+    "type": "donation",
+    "date": "2026-11-04",
+    "amount": 1500,
+    "details": "Pang-McDonalds ng mga dumalo sa Funeral Service sa Bacood.",
+    "source": "CFC Senior Pastor",
+    "donor": "Rev. Darell Maghirang",
+    "designation": "operating",
+    "parts": {
+      "tithes": 0,
+      "offering": 0,
+      "savings": 0,
+      "operating": 1500
+    },
+    "id": "donation-2026-11-04-rev-darell-maghirang"
   }
 ]
