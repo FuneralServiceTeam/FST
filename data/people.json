@@ -13,5 +13,60 @@
     "id": "p-bro-marvin-anojan",
     "name": "Bro. Marvin Anojan",
     "category": "FST Core"
+  },
+  {
+    "id": "p-erick-de-guzman",
+    "name": "Erick De Guzman",
+    "category": "FST Core"
+  },
+  {
+    "id": "p-crisanta-estacio",
+    "name": "Crisanta Estacio",
+    "category": "Preacher"
+  },
+  {
+    "id": "p-jovelyn-quejano",
+    "name": "Jovelyn Quejano",
+    "category": "Song Leader"
+  },
+  {
+    "id": "p-leonardo-billones",
+    "name": "Leonardo Billones",
+    "category": "FST Core"
+  },
+  {
+    "id": "p-nerissa-dela-cruz",
+    "name": "Nerissa Dela Cruz",
+    "category": "Member"
+  },
+  {
+    "id": "p-jessie-atibagos",
+    "name": "Jessie Atibagos",
+    "category": "Driver"
+  },
+  {
+    "id": "p-victoria-siang",
+    "name": "Victoria Siang",
+    "category": "Member"
+  },
+  {
+    "id": "p-elvie-rosales",
+    "name": "Elvie Rosales",
+    "category": "Member"
+  },
+  {
+    "id": "p-luisa-landa",
+    "name": "Luisa Landa",
+    "category": "Member"
+  },
+  {
+    "id": "p-mary-jane-billones",
+    "name": "Mary Jane Billones",
+    "category": "Member"
+  },
+  {
+    "id": "p-ruby-galang-leonardo",
+    "name": "Ruby Galang Leonardo",
+    "category": "Member"
   }
 ]
