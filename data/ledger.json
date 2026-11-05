@@ -65,5 +65,15 @@
       "operating": 1500
     },
     "id": "donation-2026-11-04-rev-darell-maghirang"
+  },
+  {
+    "type": "expense",
+    "date": "2026-11-04",
+    "amount": 1500,
+    "details": "Ang sukli at resibo ay hawak ni Ma'am Vicky Siang.",
+    "category": "Food",
+    "fund": "operating",
+    "eventId": "funeral-sa-bacood-2026-11-04",
+    "id": "expense-2026-11-04-food"
   }
 ]
